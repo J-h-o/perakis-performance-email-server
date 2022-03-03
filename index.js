@@ -1,24 +1,23 @@
 import { SMTPClient } from 'emailjs';
-import * as express from 'express';
+import express from 'express';
 
 const app = express();
 
-
-const client = new SMTPClient({
-	user: '',
-	password: '',
-	host: '',
-	tls: true,
-});
-
 app.get('/email/:from/:phone/:text', function(req, res) {
+    const client = new SMTPClient({
+        user: '',
+        password: '',
+        host: '',
+        tls: true,
+    });
+
     client.send(
         {
             text: req.params.text + "\nΤηλέφωνο Πελάτη: \n" + req.params.phone,
             from: req.params.from,
             to: 'perakisperformanceforward@getitparts.com',
             cc: '',
-            subject: 'Ραντεβού πελάτη στην Perakis Performance' + req.params.from,
+            subject: 'Ραντεβού ' + req.params.from + ' στην Perakis Performance',
         },
         (err, message) => {
             console.log(err || message);
