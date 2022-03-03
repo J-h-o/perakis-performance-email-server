@@ -1,0 +1,18 @@
+{
+  "name": "perakis-performance-email-server",
+  "version": "1.0.0",
+  "description": "perakisperformance.com email backend server with emailjs and express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run": "node index.js",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "emailjs": "^3.7.0",
+    "express": "^4.17.3"
+  }
+}
